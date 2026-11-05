@@ -1,0 +1,12 @@
+{
+  "name": "harnix-og",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": "22.x" },
+  "dependencies": {
+    "satori": "0.10.14",
+    "@resvg/resvg-js": "2.6.2",
+    "@fontsource/be-vietnam-pro": "5.0.8",
+    "@fontsource/space-grotesk": "5.0.18"
+  }
+}

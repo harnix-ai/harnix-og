@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/og.js": {
+      "memory": 1024,
+      "maxDuration": 15,
+      "includeFiles": "node_modules/@fontsource/{be-vietnam-pro,space-grotesk}/files/*.woff"
+    }
+  },
+  "rewrites": [{ "source": "/og.png", "destination": "/api/og" }]
+}
