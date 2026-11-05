@@ -3,7 +3,7 @@
     "api/og.js": {
       "memory": 1024,
       "maxDuration": 15,
-      "includeFiles": ["fonts/*.woff", "node_modules/@fontsource/space-grotesk/files/*.woff"]
+      "includeFiles": "{fonts/*.woff,node_modules/@fontsource/space-grotesk/files/*.woff}"
     }
   },
   "rewrites": [{ "source": "/og.png", "destination": "/api/og" }]
