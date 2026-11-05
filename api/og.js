@@ -12,12 +12,13 @@ const KEYS = ['t', 'k', 'c', 'v', 'l', 's', 'bg', 'items', 'stat', 'statlabel', 
 let fonts = null;
 function loadFonts() {
   if (fonts) return fonts;
-  const bvp = path.join(process.cwd(), 'node_modules/@fontsource/be-vietnam-pro/files');
+  const bvp = path.join(__dirname, '../fonts');
   const sg = path.join(process.cwd(), 'node_modules/@fontsource/space-grotesk/files');
   fonts = [];
+  // Satori selects one face per family/weight; it does not merge CSS subsets.
+  // Each bundled face includes Latin and Vietnamese glyphs in the same file.
   for (const w of [500, 700, 800])
-    for (const sub of ['vietnamese', 'latin-ext', 'latin'])
-      fonts.push({ name: 'Be Vietnam Pro', weight: w, style: 'normal', data: fs.readFileSync(path.join(bvp, `be-vietnam-pro-${sub}-${w}-normal.woff`)) });
+    fonts.push({ name: 'Be Vietnam Pro', weight: w, style: 'normal', data: fs.readFileSync(path.join(bvp, `be-vietnam-pro-${w}-normal.woff`)) });
   for (const sub of ['latin', 'latin-ext'])
     fonts.push({ name: 'Space Grotesk', weight: 600, style: 'normal', data: fs.readFileSync(path.join(sg, `space-grotesk-${sub}-600-normal.woff`)) });
   return fonts;

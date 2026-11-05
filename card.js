@@ -162,6 +162,9 @@ function panelGraph(seed, hue, items) {
 }
 
 function card(p) {
+  // Use precomposed glyphs: Satori 0.10 does not shape combining marks like a browser.
+  p = Object.fromEntries(Object.entries(p).map(([key, value]) =>
+    [key, typeof value === 'string' ? value.normalize('NFC') : value]));
   const locale = p.l === 'en' ? 'en' : 'vi';
   const cat = HUES[p.c] ? p.c : 'harnix';
   const hue = HUES[cat];
